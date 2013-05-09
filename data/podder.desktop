@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Podder
+GenericName=Podcast Manager
+Comment=Manage and listen to podcasts
+TryExec=podder
+Exec=podder
+Icon=/usr/share/podder/media/icon.svg
+Type=Application
+Categories=Audio;Music;Player;AudioVideo;GNOME;GTK;
+StartupNotify=true
+X-GNOME-Gettext-Domain=podder
+Keywords=Podcast;Audio;Music;Player;Play;Media;
