@@ -61,7 +61,13 @@ namespace Podder {
         }
         public void setup_ui () {
             Granite.Widgets.Utils.set_theming (this, STYLESHEET, "podbox", Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
-            var image = new Gtk.Image.from_stock (Gtk.Stock.MISSING_IMAGE, Gtk.IconSize.LARGE_TOOLBAR);
+            
+            Gdk.Pixbuf? pixbuf = null;
+            pixbuf = Gtk.IconTheme.get_default ().load_icon ("audio-x-generic", 64,
+                                                                 Gtk.IconLookupFlags.GENERIC_FALLBACK);
+
+            var image = new Gtk.Image.from_pixbuf (pixbuf);
+            image.set_size_request (64, 64);
 
             var title = new Gtk.Label ("<b>" + data.title + "</b>");
             title.set_use_markup (true);
