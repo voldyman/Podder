@@ -23,7 +23,6 @@ using Granite.Widgets;
 
 namespace Podder {
     public class PodBox : EventBox {
-        public static signal hidebox;
         public const string STYLESHEET  =
         ".podbox {
             background-color: #ffffff;
@@ -45,9 +44,6 @@ namespace Podder {
             setup_ui ();
             add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
             this.button_press_event.connect (() => {
-                if (active_box != null) {
-                    remove (active_box);
-                }
                 print ("Button Pressed");
                 var info_box = new Gtk.Box (Orientation.HORIZONTAL, 5);
                 info_box.pack_start (new Button.with_label ("Play"));
@@ -55,7 +51,6 @@ namespace Podder {
                 info_box.pack_start (new Button.with_label ("info"));
                 layout_grid.attach (info_box, 0, 2, 3, 1);
                 info_box.show_all ();
-                active_box = (owned) info_box;
                 return false;
             });
         }
