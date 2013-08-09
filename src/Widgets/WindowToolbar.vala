@@ -52,12 +52,12 @@ namespace Podder {
             set_events (Gdk.EventMask.ALL_EVENTS_MASK);
             event.connect (toolbar_clicked);
 
-            var close = new Gtk.ToolButton (new Gtk.Image.from_file ("/usr/share/themes/elementary/metacity-1/close.svg"), "Close");
+            var close = new Gtk.ToolButton (new Gtk.Image.from_file (Build.PKGDATADIR + "/imgs/close.svg"), "Close");
             close.height_request = HEIGHT;
             close.width_request = HEIGHT;
             close.clicked.connect (() => Window.destroy());
 
-            var maximize = new Gtk.ToolButton (new Gtk.Image.from_file ("/usr/share/themes/elementary/metacity-1/maximize.svg"), "Close");
+            var maximize = new Gtk.ToolButton (new Gtk.Image.from_file (Build.PKGDATADIR + "/imgs/maximize.svg"), "Close");
             maximize.height_request = HEIGHT;
             maximize.width_request = HEIGHT;
             maximize.clicked.connect (() => {
