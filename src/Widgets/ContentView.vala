@@ -68,7 +68,7 @@ namespace Podder {
             box.pack_start (new PodBox (data), false, false);
             box.pack_start (new PodBox (data), false, false);
             box.pack_start (new PodBox (data), false, false);
-            add_item ("Nerdist", box, Category.CHANNELS);
+            add_item ("Nerdist", new PodList (), Category.CHANNELS);
             // Add and expand categories
             sidebar.root.add (welcome_item);
             sidebar.root.add (channels_category);
