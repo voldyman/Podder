@@ -64,10 +64,6 @@ namespace Podder {
                 logo_url = "a"
             };
             var box = new Gtk.Box (Orientation.VERTICAL, 5);
-            box.pack_start (new PodBox (data), false, false);
-            box.pack_start (new PodBox (data), false, false);
-            box.pack_start (new PodBox (data), false, false);
-            box.pack_start (new PodBox (data), false, false);
             add_item ("Nerdist", new PodList (), Category.CHANNELS);
             // Add and expand categories
             sidebar.root.add (welcome_item);

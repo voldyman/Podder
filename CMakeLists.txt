@@ -56,7 +56,6 @@ vala_precompile(VALA_C
     src/Widgets/WindowToolbar.vala
     src/Widgets/ContentView.vala
     src/Widgets/SearchView.vala
-    src/Widgets/PodBox.vala
     src/Widgets/PodList.vala
     src/Backend/PodcastData.vala
     src/config.vala
