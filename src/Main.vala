@@ -43,10 +43,9 @@ namespace Podder {
             app_icon = "podder";
             app_launcher = "podder.desktop";
 
-            main_url = "https://launchpad.net/podder";
-            bug_url = "https://bugs.launchpad.net/podder";
-            help_url = "https://answers.launchpad.net/podder";
-            translate_url = "https://translations.launchpad.net/podder";
+            main_url = "https://github.com/voldyman/podder";
+            bug_url = "https://github.com/voldyman/podder";
+            help_url = "https:///github.com/voldyman/podder";
 
             about_authors = {"Akshay Shekher<voldyman666@gmail.com>"};
             about_documenters = {"Akshay Shekher<voldyman666@gmail.com>"};
