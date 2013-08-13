@@ -23,16 +23,17 @@ using Granite.Widgets;
 
 namespace Podder {
 
+    public enum Category {
+        SUBSCRIPTIONS,
+        DOWNLOADS
+    }
+
     public class ContentView : Granite.Widgets.ThinPaned {
-        public enum Category {
-            CHANNELS,
-            DOWNLOADS
-        }
 
         private SourceList sidebar;
         private Notebook page_switcher;
 
-        private SourceList.ExpandableItem channels_category;
+        private SourceList.ExpandableItem subscription_category;
         private SourceList.ExpandableItem downloads_category;
 
         public ContentView () {
@@ -50,24 +51,18 @@ namespace Podder {
             });
 
             // Main sidebar categories
-            channels_category = new Granite.Widgets.SourceList.ExpandableItem ("Channels");
-            downloads_category = new Granite.Widgets.SourceList.ExpandableItem ("Downloads");
+            subscription_category = new Granite.Widgets.SourceList.ExpandableItem (_("Subscription"));
+            downloads_category = new Granite.Widgets.SourceList.ExpandableItem (_("Downloads"));
 
             var welcome_item = new SourceListItem ("Welcome");
             welcome_item.icon = null;
             welcome_item.page_num = page_switcher.append_page (create_welcome_screen (), null);
 
-            PodcastData data = PodcastData () {
-                title = "Nerdist",
-                description = "doodle",
-                url = "d",
-                logo_url = "a"
-            };
             var box = new Gtk.Box (Orientation.VERTICAL, 5);
 //            add_item ("Nerdist", new PodList (), Category.CHANNELS);
             // Add and expand categories
             sidebar.root.add (welcome_item);
-            sidebar.root.add (channels_category);
+            sidebar.root.add (subscription_category);
             sidebar.root.add (downloads_category);
             sidebar.root.expand_all ();
 
@@ -76,18 +71,21 @@ namespace Podder {
             base.expand = true;
         }
 
-        public void add_item (string title, Widget page, Category cat, bool selected = false) {
+        public void add_subscription (string title, Widget page, bool selected = false) {
+
+        }
+        public void add_item (string title, Widget page, bool selected = false) {
             var item = new SourceListItem (title);
-            switch (cat) {
-                case Category.CHANNELS:
-                    channels_category.add (item);
+/*            switch (cat) {
+                case Category.SUBSCRIPTIONS:
+                    s_category.add (item);
                     break;
                 case Category.DOWNLOADS:
                     downloads_category.add (item);
                     break;
                 default:
                     return;
-            }
+            } */
             item.page_num = page_switcher.append_page (page, null);
 
             if (selected) {

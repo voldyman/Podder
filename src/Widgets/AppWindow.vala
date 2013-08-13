@@ -26,6 +26,7 @@ namespace Podder {
         private Box container;
         public Grid content;
         public StatusBar statusbar;
+        public ContentView content_view;
         private Podder.WindowToolbar window_toolbar { get; private set; }
 
         public bool maximized { get; set; }
@@ -54,7 +55,7 @@ namespace Podder {
             content.orientation = Gtk.Orientation.VERTICAL;
 
             //ContentView
-            var content_view = new Podder.ContentView ();
+            content_view = new Podder.ContentView ();
             content.attach (content_view , 0, 0, 1, 1);
             content.show_all ();
 

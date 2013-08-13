@@ -61,6 +61,7 @@ vala_precompile(VALA_C
 PACKAGES
     granite
     gtk+-3.0
+    gee-1.0
 OPTIONS
     --thread
 #    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
