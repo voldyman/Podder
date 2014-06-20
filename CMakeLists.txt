@@ -64,14 +64,7 @@ PACKAGES
     gee-1.0
 OPTIONS
     --thread
-#    --vapidir=${CMAKE_CURRENT_SOURCE_DIR}/vapi/
 )
-
-#include (GSettings)
-#add_schema ("org.pantheon.terminal.gschema.xml")
-
-#link_libraries (m)
-#add_subdirectory (po)
 
 add_executable (podder ${VALA_C})
 find_library (M_LIB m)
